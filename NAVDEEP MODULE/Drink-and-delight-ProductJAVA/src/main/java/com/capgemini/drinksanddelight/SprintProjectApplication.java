@@ -14,13 +14,13 @@ import org.springframework.web.client.RestTemplate;
 @EnableTransactionManagement
 public class SprintProjectApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SprintProjectApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SprintProjectApplication.class, args);
+    }
 
-	@Bean
-	public RestTemplate restTemplate(){
-		return new RestTemplate();
-	}
-	
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
+
 }

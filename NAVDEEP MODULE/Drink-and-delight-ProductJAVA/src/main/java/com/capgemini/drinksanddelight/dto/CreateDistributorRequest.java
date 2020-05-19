@@ -1,6 +1,6 @@
 package com.capgemini.drinksanddelight.dto;
 
-public class DistributorDto {
+public class CreateDistributorRequest {
 	private String distributor_Id;
 
 	private String distributor_Name;

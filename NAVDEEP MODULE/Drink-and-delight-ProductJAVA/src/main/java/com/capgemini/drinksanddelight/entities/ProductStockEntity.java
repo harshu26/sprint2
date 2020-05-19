@@ -1,20 +1,16 @@
 package com.capgemini.drinksanddelight.entities;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import org.hibernate.annotations.DynamicInsert;
-import org.hibernate.annotations.DynamicUpdate;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 @Table(name = "Stock_Details")
-public class ProductStockDetails {
+public class ProductStockEntity {
 
 	@Id
 	private String stockId;
@@ -28,13 +24,13 @@ public class ProductStockDetails {
 	private LocalDate expiryDate;
 	private String qualityCheck;
 
-	public ProductStockDetails() {
+	public ProductStockEntity() {
 
 	}
 
-	public ProductStockDetails(String stockId, String name, String supplierId, double quantityValue,
-			double quantityUnit, double pricePerUnit, String warehouseId, LocalDate manufactureDate,
-			LocalDate expiryDate, String qualityCheck) {
+	public ProductStockEntity(String stockId, String name, String supplierId, double quantityValue,
+							  double quantityUnit, double pricePerUnit, String warehouseId, LocalDate manufactureDate,
+							  LocalDate expiryDate, String qualityCheck) {
 		super();
 		this.stockId = stockId;
 		this.name = name;
@@ -152,7 +148,7 @@ public class ProductStockDetails {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		ProductStockDetails other = (ProductStockDetails) obj;
+		ProductStockEntity other = (ProductStockEntity) obj;
 		if (stockId == null) {
 			if (other.stockId != null)
 				return false;

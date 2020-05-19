@@ -11,10 +11,10 @@ export class DistributorService{
     }
 
 
-    baseUrl = "http://localhost:8086/products";
+    baseUrl = "http://localhost:8086/distributors";
 
     addDistributor(distributor:Distributor):Observable<Distributor>{
-        let url = this.baseUrl+"/adddistributor";
+        let url = this.baseUrl+"/add";
         let result :Observable<Distributor> = this.client.post<Distributor>(url,distributor);
         return result;
     }
@@ -26,7 +26,7 @@ export class DistributorService{
     }
 
     fetchAllDistributors():Observable<Distributor[]>{
-        let url = this.baseUrl+"/getDistributorDetails";
+        let url = this.baseUrl;
         let result:Observable<Distributor[]> = this.client.get<Distributor[]>(url);
         return result;
     }
